@@ -32,13 +32,16 @@ ul:nth-child(1){
     color: wheat;
 }
 
-ul:nth-child(1)  a{
+a{
     color:rgb(243, 121, 121);
     text-decoration: none;
+    text-shadow: 1px 1px black;
+
 }
 
-ul:nth-child(1) a:hover, header a:hover, #about > section:nth-child(1) a:hover,
-#about > section:nth-child(2) a:hover{
+#about > section:nth-child(1) a:hover,
+#about > section:nth-child(2) a:hover,
+body a:hover{
     color: #f1d2d27f;
 }
 
@@ -57,12 +60,6 @@ header{
     background-color: rgba(0, 0, 0, 0.2);
     padding-bottom: 1rem;
 }
-
-header a{
-    color:rgb(255, 87, 87);
-    text-decoration: none;
-}
-
 
 header > .container{
     text-align: center;
@@ -118,12 +115,6 @@ main > .container{
     font-weight: lighter;
 }
 
-#about > section:nth-child(1) a{
-    color:rgb(243, 121, 121);
-    text-decoration: none;
-    text-shadow: 1px 1px black;
-}
-
 #about > section:nth-child(2){
     background-color: rgba(192, 170, 201, 0.468);
     width: 40%;
@@ -132,12 +123,6 @@ main > .container{
     text-shadow: 2px 0px #ff8f8f40;
     border-style:groove;
 
-}
-
-#about > section:nth-child(2) a{
-    text-decoration: none;
-  color: rgb(243, 121, 121);
-  text-shadow: 1px 1px black;
 }
 
 section:nth-child(2) > ul{
@@ -153,10 +138,6 @@ section:nth-child(2) > ul > li{
     border-radius: 1rem;
     margin: .3rem .3rem;
     width: 10rem;
-}
-
-section:nth-child(2) > ul > li:hover{
-    color:red;
 }
 
 section:nth-child(2) > ul > li:last-child{
@@ -199,12 +180,59 @@ section:nth-child(2) > ul + p + p{
 }
 
 .profile{
-    background-color: blueviolet;
-    order:3;
+    order: 3;
+    background-color: #ffffe16e;
+}
+
+.profile, #styles{
+    text-align: center;
+    border-radius: 12rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-style: solid;
+}
+
+.profile > div, #styles > div{
+    display:flex;
+    flex-direction: column;
+}
+
+.profile h4, #styles h2{
+    font-size: large;
+    order: 0;
+    margin-bottom: .3rem;
+    text-decoration-style:dashed; 
+}
+
+.profile ul, #styles ul{
+    display: inline-flex;
+    order: 2;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+}
+
+.profile ul li, #styles ul li{
+    border-style: solid;
+    background-color: antiquewhite;
+    padding: 0.2rem;
+    list-style: none;
+    border-radius: 1rem;
+    margin: .3rem .3rem;
+    width: 10rem;
+}
+
+#styles ul li{
+    width: 15rem;
+}
+
+.profile a, #styles a{
+    order: 1;
+    width: fit-content;
+    margin: auto;
 }
 
 #styles{
-    background-color: aqua;
+    background-color:rgba(225, 156, 156, 0.43);
     order:4;
 }
 
@@ -218,9 +246,12 @@ section:nth-child(2) > ul + p + p{
     display: inline-block;
     border-color: black;
     border-style: solid;
+    text-shadow: none;
 }
 
-#files a:hover{
+section:nth-child(2) > ul > li:hover, #files a:hover,
+.profile li:hover, #styles li:hover{
+
     color:red;
     border-color: red;
 }
@@ -231,34 +262,35 @@ section:nth-child(2) > ul + p + p{
 }
 
 .page-footer{
-    order:5;
-    background-color: #ff8b8b78;
+    background-color: #0f0f0f95;
     order: 5;
-    font-size: large;
-    text-decoration: none;
     text-align: center;
-
+    backdrop-filter: blur(8px);
+    border-top: solid black;
+    padding: 1rem;
 }
 
 .page-footer > .container{
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+
+}
+
+.page-footer > div p{
+    margin: 0.1rem;
+    color: beige;
+    text-shadow: 2px 1px black;
+    font-size: small;
 }
 
 .page-footer > .container > p:nth-child(1){
-    margin: 0rem;
     order: 0;
 }
-.page-footer > .container p:nth-child(2){
-    order: 1;
-    margin: auto;
-    width: 70%;
-    color:Red;
-}
 .page-footer > .container p:nth-child(3){
+    order: 1;
+}
+.page-footer > .container p:nth-child(3) + p{
     order: 2;
-
 }
 .page-footer > .container > ul{
     display: flex;
@@ -266,10 +298,11 @@ section:nth-child(2) > ul + p + p{
     order: 3;
     margin: auto;
     width: 50%;
+    list-style: cjk-earthly-branch;
+    color: beige;
 }
 /* the link to main css that has been disabled */
 .skip-link{
-    visibility: hidden;
-    order:6;
+    display: none;
 }
 /* ------------------------------------------------------------------------------------------ */
