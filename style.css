@@ -352,3 +352,180 @@ They have been set as the second element that shows up in these two aside tags *
     display: none;
 }
 /* ------------------------------------------------------------------------------------------ */
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 1920px) {
+    /* setting the article with id "guidelines" in a position where it is housed in the first column of the second row */
+    #guidelines{
+        margin: 2rem 2.5rem 1rem 8rem;
+    }
+
+    /* setting the article with id "contribute" in a position where it is housed in the second column of the second row */
+    #contribute{
+        margin: 2rem 9.5rem 1rem 4rem
+    }
+}
+
+@media only screen and (max-width: 1470px) {
+    body {
+      font-size: 13px;
+    }
+
+    section:nth-child(2) > ul > li{
+        /* creates a nice border around the individual list items */
+        width: 10rem;
+    }
+    
+    #about > section:nth-child(2) ul{
+        width: 25rem;
+        margin: auto;
+    }
+
+    section:nth-child(2) > ul > li:last-child{
+        margin-left: 6rem;
+    }
+    
+    /* setting the article with id "guidelines" in a position where it is housed in the first column of the second row */
+    #guidelines{
+        margin: 2rem 3rem 1rem 4rem;
+    }
+
+    /* setting the article with id "contribute" in a position where it is housed in the second column of the second row */
+    #contribute{
+        margin: 2rem 4rem 1rem 3rem;
+    }
+
+    #contribute > section:nth-child(2) ol{
+        padding: 0 10px;
+    }
+
+}
+
+  @media only screen and (max-width: 1070px) {
+      
+    #about{
+        flex-direction: column;
+    }
+    #about > section:nth-child(1), #about > section:nth-child(2) {
+        width:50%;
+        margin:2rem auto;
+    }
+
+    main > .container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #guidelines, #contribute{
+        width:50%;
+        margin:2rem auto;
+    }
+
+    .profile ul li, #styles ul li{
+        width:14rem;
+    }
+
+    .profile, #styles{
+        width:50%;
+        border-radius: 6rem;
+    }
+
+    .profile ul, #styles ul{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        padding: 0;
+        margin: 1rem auto;
+    }
+
+    .page-footer > div ul, .page-footer > div p{
+        font-size:11px;
+    }
+
+}
+
+  @media only screen and (max-width: 888px) {
+
+    nav{
+        font-size: 13px;
+    }
+    #about > section:nth-child(2) ul{
+        flex-direction: column;
+        padding: 0;
+        width: fit-content;
+        margin: auto;
+    }
+
+    section:nth-child(2) > ul li{
+        width:14rem;
+    }
+
+    section:nth-child(2) > ul > li:last-child {
+        margin-left: 6px;
+    }
+
+    #files > .container{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    #files a{
+        margin: .3rem auto;
+        width: 14rem;
+    }
+
+    .page-footer > div ul, .page-footer > div p{
+        font-size:11px;
+    }
+
+    .page-footer > div > ul li{
+        margin: 0px 16px;
+    }
+
+}
+
+  @media only screen and (max-width: 580px) {
+    
+    nav{
+        font-size: 10px;
+    }
+
+    body{
+        font-size: 10px;
+    }
+
+    .page-footer > div ul, .page-footer > div p{
+        font-size:8px;
+    }
+
+    .page-footer > div > ul li{
+        margin: 0px 16px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    
+    nav, .page-footer > div ul,.page-footer > div p{
+        font-size: 8px;
+    }
+
+    .page-footer > div > ul li{
+        margin: 0px 16px;
+    }
+
+    header > .container > h2, header > .container > p{
+        font-size:14px;
+    }
+
+    header > .container > h1{
+        font-size: 50px;
+    }
+
+    .profile ul li, #styles ul li, #files a, section:nth-child(2) > ul li{
+        width:10rem;
+    }
+
+    #contribute > section:nth-child(2) ol{
+        padding: 0 10px;
+    }
+}
+
