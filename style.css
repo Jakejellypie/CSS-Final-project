@@ -4,7 +4,7 @@
 /* setting a background image for the webpage */
 html{
     background-image: url("background.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-position-x: center;
     background-position-y: 0;
@@ -94,6 +94,7 @@ ul:nth-child(1){
     display: flex;
     justify-content: space-evenly;
     list-style: hiragana-iroha;
+    padding-left: 4%;
 }
 
 /* selecting every hyperlink in the html and giving it a reddish color, removing the bullet points and giving it shadow  */
@@ -341,10 +342,11 @@ They have been set as the second element that shows up in these two aside tags *
 .page-footer > .container > ul{
     display: flex;
     justify-content: space-evenly;
-    order: 3;
-    margin: auto;
-    width: 50%;
     list-style: cjk-earthly-branch;
+    margin: auto;
+    order: 3;
+    padding:0;
+    width: 50%;
 }
 
 /* the link to main css that has been disabled */
@@ -448,6 +450,7 @@ They have been set as the second element that shows up in these two aside tags *
     nav{
         font-size: 13px;
     }
+
     #about > section:nth-child(2) ul{
         flex-direction: column;
         padding: 0;
@@ -479,6 +482,7 @@ They have been set as the second element that shows up in these two aside tags *
 
     .page-footer > div > ul li{
         margin: 0px 16px;
+        font-size:xx-small;
     }
 
 }
@@ -509,7 +513,9 @@ They have been set as the second element that shows up in these two aside tags *
     }
 
     .page-footer > div > ul li{
-        margin: 0px 16px;
+        margin: 0px 12px;
+        font-size: 7px;
+
     }
 
     header > .container > h2, header > .container > p{
@@ -528,4 +534,51 @@ They have been set as the second element that shows up in these two aside tags *
         padding: 0 10px;
     }
 }
+
+@media only screen and (max-width: 360px) {
+    
+    nav, .page-footer > div ul,.page-footer > div p{
+        font-size: 6px;
+    }
+
+    .page-footer > div > ul li{
+        margin: 0px 16px;
+        font-size: 5px;
+    }
+
+    header > .container > h2, header > .container > p{
+        font-size:10px;
+    }
+
+    header > .container > h1{
+        font-size: 35px;
+    }
+
+    .profile ul li, #styles ul li, #files a, section:nth-child(2) > ul li{
+        width:7rem;
+    }
+
+}
+
+@media only screen and (max-width: 270px) {
+    
+    nav, .page-footer > div ul,.page-footer > div p{
+        font-size: 6px;
+    }
+
+    header > .container > h2, header > .container > p{
+        font-size:8px;
+    }
+
+    header > .container > h1{
+        font-size: 30px;
+        text-shadow: 3px 2px black;
+    }
+
+    .profile ul li, #styles ul li, #files a, section:nth-child(2) > ul li{
+        width:5rem;
+    }
+
+}
+
 
