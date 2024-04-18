@@ -174,7 +174,7 @@ all the way to the second column, all of the first row */
 
 /* setting individual designs for the first section of the article with id "about"  */
 #about > section:nth-child(1){
-    background-color: rgba(30, 40, 42, 0.61);
+    background-color: rgba(69, 86, 89, 0.68);
     font-weight: lighter;
     margin: 2rem 1rem 1rem auto;
 }
@@ -228,7 +228,7 @@ section:nth-child(2) > ul + p + p{
 
 /* setting the article with id "contribute" in a position where it is housed in the second column of the second row */
 #contribute{
-    background-color: #35151547;
+    background-color: #46000047;
     grid-column-start: 2;
     grid-column-end: span 2;
     grid-row-start: 2;
