@@ -1,37 +1,102 @@
+/* importing an appropriate google font to use for this webpage */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
+/* setting a background image for the webpage */
 html{
     background-image: url("background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: center;
     background-position-y: 0;
+    /* using the scroll-behavior attrubute to make the scrolling smooth */
+    scroll-behavior: smooth;
 }
 
+/* making the svg star disappear from view */
 svg{
     display: none;
 }
 
-/* navigational element selector */
-nav{
-    background-color: #0000009c;
-    order: 0;
-    font-size: large;
-    text-decoration: none;
-    border-bottom: solid;
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(9px);
+/* the entire body */
+body{
+    /* I have made the body flex, just so I can change the order of the elements. */
+    display:flex;
+    flex-direction: column;
+    font-size: smaller;
+    /* setting the imported font as the main font for all the things in the body */
+    font-family: Metal Mania, sans-serif;
+    /* setting this to 0 so that the nav and the footer are flush with the start and end of the screen. */
+    margin:0;
 }
 
-/* navigational element's list selector */
+/* navigational element selector, this element has been given the first order in the body*/
+nav{
+    backdrop-filter: blur(9px);
+    background-color: #0000009c;
+    border-bottom: solid;
+    font-size: large;
+    order: 0;
+    /* position sticky combined with top 0 enables the nav to display at the top of the view even when the user scrolls */
+    position: sticky;
+    text-decoration: none;
+    top: 0;
+}
+
+/* the header of the page, this element has been given the 2nd position in the entire body*/
+header{
+    background-color: rgba(0, 0, 0, 0.2);
+    order:1;
+    padding-bottom: 1rem;
+}
+
+ /* the main tag (containing all the article tags from the html) has been set to be the third item in the body */
+main{
+    text-align: center;
+    order:2
+}
+
+/* the aside tag with class "profile" has been set to be in the third position of the body flex */
+.profile{
+    order: 3;
+    background-color: #ffffe16e;
+}
+
+/* the aside tag with the id "styles" has been put at the 4th place in the entire body*/
+#styles{
+    background-color:rgba(225, 156, 156, 0.43);
+    order:4;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* All the list items in the html have been given the following styles */
+section:nth-child(2) > ul > li,.profile ul li, #styles ul li{
+    /* creates a nice border around the individual list items */
+    border-style: solid;
+    background-color: antiquewhite;
+    padding: 0.2rem;
+    list-style: none;
+    border-radius: 1rem;
+    margin: .3rem;
+    width: 10rem;
+}
+
+/* All the list items's hovers have been given the following styles */
+/* if I hover over any of the list items in the html, the text and the border turn red. */
+section:nth-child(2) > ul > li:hover, #files a:hover,
+.profile li:hover, #styles li:hover{
+    color:red;
+    border-color: red;
+}
+
+/* selecting the entire list in the nav tag*/
 ul:nth-child(1){
+    color: wheat;
     display: flex;
     justify-content: space-evenly;
     list-style: hiragana-iroha;
-    color: wheat;
 }
 
+/* selecting every hyperlink in the html and giving it a reddish color, removing the bullet points and giving it shadow  */
 a{
     color:rgb(243, 121, 121);
     text-decoration: none;
@@ -39,65 +104,53 @@ a{
 
 }
 
-#about > section:nth-child(1) a:hover,
-#about > section:nth-child(2) a:hover,
-body a:hover{
+/* changing the color of every link element when you hover over it */
+a:hover{
     color: #f1d2d27f;
 }
 
-/* the entire body */
-body{
-    display:flex;
-    flex-direction: column;
-    margin:auto;
-    font-size: smaller;
-    font-family: Metal Mania ;
-}
-/* ------------------------------------------------------------------------------------------ */
-/* the header of the page */
-header{
-    order: 1;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding-bottom: 1rem;
-}
-
+/* this selects the container div inside the header tag */
 header > .container{
+    color: wheat;
+    /* aligning every text inside the container to be centered */
     text-align: center;
-    color: burlywood;
     text-shadow: 1px 1.5px #000;
 }
 
+/* removing the margin from the only para in the header tag to make everything more closer */
 header > .container > p{
     margin: 0;
 }
 
+/* customizing the header's heading  */
 header > .container > h1{
-    font-size: 5rem;
     color: burlywood;
+    font-size: 5rem;
     text-shadow: 1px 7px #000;
 }
 
+/* using the before pseudo selector to create a gif before the heading of the header. */
 header > .container > h1::before{
     content: url(fire.gif);
     margin-right: 0.5rem
 }
 
+/* using the after pseudo selector to create a gif after the heading of the header. */
 header > .container > h1::after{
     content: url(fire.gif);
     margin-left: 0.5rem
 }
 /* ------------------------------------------------------------------------------------------ */
-main{
-    text-align: center;
-    order:2
-}
 
+/* creating a grid inside the main that will store each article in its appropriate place. */
 main > .container{
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr;
 }
 
+/* setting the article with id "about" in a position where it is housed in the first column all
+all the way to the second column, all of the first row */
 #about{
     display: flex;
     grid-column-start: 1;
@@ -106,136 +159,78 @@ main > .container{
     grid-row-end: span 1;
 }
 
+/* in the about id article, giving the two section's of the article some shared values */
+#about section{
+    border-style:groove;
+    padding: 2rem;
+    width: 40%;
+}
+
+/* setting individual designs for the first section of the article with id "about"  */
 #about > section:nth-child(1){
     background-color: rgba(178, 216, 223, 0.31);
-    width: 40%;
-    margin: 2rem 1rem 1rem auto;
-    padding: 2rem;
-    border-style:groove;
     font-weight: lighter;
+    margin: 2rem 1rem 1rem auto;
 }
 
+/* setting individual designs for the second section of the article with id "about"  */ 
 #about > section:nth-child(2){
     background-color: rgba(192, 170, 201, 0.468);
-    width: 40%;
     margin: 2rem auto 1rem 1rem;
-    padding: 2rem;
-    text-shadow: 2px 0px #ff8f8f40;
-    border-style:groove;
-
 }
 
+/* giving the list elements of the second section of the article with id "about" flex-wrap, so that the
+elements wrap around based on the screen size of the window */
 section:nth-child(2) > ul{
     display:inline-flex;
     flex-wrap: wrap;
 }
 
-section:nth-child(2) > ul > li{
-    border-style: solid;
-    background-color: antiquewhite;
-    padding: 0.2rem;
-    list-style: none;
-    border-radius: 1rem;
-    margin: .3rem .3rem;
-    width: 10rem;
-}
-
+/* changing the last list element of the second section of the article with id "about" to create a reverse
+'u' like shape */
 section:nth-child(2) > ul > li:last-child{
     margin-left:11.7rem;
 }
 
+/* setting the margin-bottom of the first paragraph from the list element of section 2 in article with id "about" to 0, so that
+the paragraph below it can be flush it with it, once all that paragraph's padding has been removed. */
 section:nth-child(2) > ul + p{
-    margin: 1rem 0 0 0;
+    margin-bottom: 0;
 }
 
 section:nth-child(2) > ul + p + p{
     margin: 0;
 }
 
+/* giving both articles (with id 'guidelines' and 'contribute') shared values */
+#guidelines, #contribute{
+    border-style: groove;
+    justify-self: center;
+    padding: 2rem;
+    width: 80%;
+}
 
+/* setting the article with id "guidelines" in a position where it is housed in the first column of the second row */
 #guidelines{
     background-color: #ffb9b954;
-    width: 80%;
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 2;
     grid-row-end: span 2;
     margin: 2rem 1rem 1rem 4rem;
-    justify-self: center;
-    padding: 2rem;
-    border-style: groove;
 }
 
+/* setting the article with id "contribute" in a position where it is housed in the second column of the second row */
 #contribute{
     background-color: #ff8a8a47;
     grid-column-start: 2;
     grid-column-end: span 2;
     grid-row-start: 2;
     grid-row-end: span 2;
-    width: 80%;
-    margin: 2rem 5rem 1rem 1rem;
-    text-align: center;
-    padding: 2rem;
-    border-style: groove;
+    margin: 2rem 4rem 1rem 1rem;
 }
 
-.profile{
-    order: 3;
-    background-color: #ffffe16e;
-}
-
-.profile, #styles{
-    text-align: center;
-    border-radius: 12rem;
-    padding: 2rem;
-    margin: 2rem auto;
-    border-style: solid;
-}
-
-.profile > div, #styles > div{
-    display:flex;
-    flex-direction: column;
-}
-
-.profile h4, #styles h2{
-    font-size: large;
-    order: 0;
-    margin-bottom: .3rem;
-    text-decoration-style:dashed; 
-}
-
-.profile ul, #styles ul{
-    display: inline-flex;
-    order: 2;
-    flex-wrap: wrap;
-    margin-top: .5rem;
-}
-
-.profile ul li, #styles ul li{
-    border-style: solid;
-    background-color: antiquewhite;
-    padding: 0.2rem;
-    list-style: none;
-    border-radius: 1rem;
-    margin: .3rem .3rem;
-    width: 10rem;
-}
-
-#styles ul li{
-    width: 15rem;
-}
-
-.profile a, #styles a{
-    order: 1;
-    width: fit-content;
-    margin: auto;
-}
-
-#styles{
-    background-color:rgba(225, 156, 156, 0.43);
-    order:4;
-}
-
+/* selecting the hyperlink items of the article with id "contribute" and giving them css values */
 #files a{
     color: black;
     text-decoration: none;
@@ -249,49 +244,100 @@ section:nth-child(2) > ul + p + p{
     text-shadow: none;
 }
 
-section:nth-child(2) > ul > li:hover, #files a:hover,
-.profile li:hover, #styles li:hover{
-
-    color:red;
-    border-color: red;
-}
-
 #files h3{
     color: rgb(255, 87, 87);
     text-shadow: 1px 2px black;
 }
 
+/* both aside tags (one with class "profile" and one with id "styles") has been given shared values */
+.profile, #styles{
+    text-align: center;
+    border-radius: 12rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-style: solid;
+}
+
+/* making the containers of the two asides flex (with column direction) so that I can change the order of the elements 
+presented within these tags */
+.profile > div, #styles > div{
+    display:flex;
+    flex-direction: column;
+}
+
+/* giving shared values to the headers of the two aside tags
+making the headers order 0, the first thing to display in these tags */
+.profile h4, #styles h2{
+    font-size: large;
+    order: 0;
+    margin-bottom: .3rem;
+}
+
+/* the "view stylesheets" and "view all styles" 'a' tags from the aside tag with the class "profile", and the aside tag with the id "styles", 
+have both been given the following styles.
+They have been set as the second element that shows up in these two aside tags */
+.profile a, #styles a{
+    order: 1;
+    width: fit-content;
+    margin: auto;
+}
+
+/* the respective lists of the two aside tags have been wrapped and given the last position to be displayed in their respective tags */
+.profile ul, #styles ul{
+    display: inline-flex;
+    order: 2;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+}
+
+/* the width of the list of the aside tag with id "styles" has been given a longer length to house longer text */
+#styles ul li{
+    width: 15rem;
+}
+
+/* giving basic values to all the elements of the footer tag with class ".page-footer" */
 .page-footer{
     background-color: #0f0f0f95;
     order: 5;
     text-align: center;
+    /* using backdrop filter to give the background of the footer a blue of 8px */
     backdrop-filter: blur(8px);
     border-top: solid black;
     padding: 1rem;
+    color:beige;
+    margin-top: 2rem;
 }
 
+/* making the container of the footer flex to change the order of the elements within it */
 .page-footer > .container{
     display: flex;
     flex-direction: column;
 
 }
 
+/* create shared css values for all paragraphs in the footer */
 .page-footer > div p{
     margin: 0.1rem;
-    color: beige;
     text-shadow: 2px 1px black;
     font-size: small;
 }
 
+/* giving the first para from the container in the footer the first order */
 .page-footer > .container > p:nth-child(1){
     order: 0;
 }
+
+/* giving the second para from the container in the footer the second order */
 .page-footer > .container p:nth-child(3){
     order: 1;
 }
+
+/* giving the third para from the container in the footer the third order */
 .page-footer > .container p:nth-child(3) + p{
     order: 2;
 }
+
+/* giving the ul list from the container in the footer the fourth order */
 .page-footer > .container > ul{
     display: flex;
     justify-content: space-evenly;
@@ -299,8 +345,8 @@ section:nth-child(2) > ul > li:hover, #files a:hover,
     margin: auto;
     width: 50%;
     list-style: cjk-earthly-branch;
-    color: beige;
 }
+
 /* the link to main css that has been disabled */
 .skip-link{
     display: none;
