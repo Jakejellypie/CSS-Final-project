@@ -174,7 +174,7 @@ all the way to the second column, all of the first row */
 
 /* setting individual designs for the first section of the article with id "about"  */
 #about > section:nth-child(1){
-    background-color: rgba(60, 90, 95, 0.31);
+    background-color: rgba(30, 40, 42, 0.61);
     font-weight: lighter;
     margin: 2rem 1rem 1rem auto;
 }
