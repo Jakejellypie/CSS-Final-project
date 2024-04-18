@@ -8,7 +8,7 @@ html{
     background-attachment: fixed;
     background-position-x: center;
     background-position-y: 0;
-    /* using the scroll-behavior attrubute to make the scrolling smooth */
+    /* using the scroll-behavior attribute to make the scrolling smooth */
     scroll-behavior: smooth;
 }
 
@@ -58,15 +58,20 @@ main{
 /* the aside tag with class "profile" has been set to be in the third position of the body flex */
 .profile{
     order: 3;
-    background-color: #ffffe16e;
+    background-color: #8080606e;
 }
 
 /* the aside tag with the id "styles" has been put at the 4th place in the entire body*/
 #styles{
-    background-color:rgba(225, 156, 156, 0.43);
+    background-color:rgba(127, 102, 102, 0.43);
     order:4;
 }
 /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* selecting all the relevant text elements of the html, and giving them shared css styles. */
+body h1, body h2, body h3, body h4, body ol, body p{
+    color: beige;
+    text-shadow: black 1px 1.5px;
+}
 
 /* All the list items in the html have been given the following styles */
 section:nth-child(2) > ul > li,.profile ul li, #styles ul li{
@@ -169,14 +174,14 @@ all the way to the second column, all of the first row */
 
 /* setting individual designs for the first section of the article with id "about"  */
 #about > section:nth-child(1){
-    background-color: rgba(178, 216, 223, 0.31);
+    background-color: rgba(60, 90, 95, 0.31);
     font-weight: lighter;
     margin: 2rem 1rem 1rem auto;
 }
 
 /* setting individual designs for the second section of the article with id "about"  */ 
 #about > section:nth-child(2){
-    background-color: rgba(192, 170, 201, 0.468);
+    background-color: rgba(100, 92, 104, 0.47);
     margin: 2rem auto 1rem 1rem;
 }
 
@@ -213,7 +218,7 @@ section:nth-child(2) > ul + p + p{
 
 /* setting the article with id "guidelines" in a position where it is housed in the first column of the second row */
 #guidelines{
-    background-color: #ffb9b954;
+    background-color: #44353554;
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 2;
@@ -223,7 +228,7 @@ section:nth-child(2) > ul + p + p{
 
 /* setting the article with id "contribute" in a position where it is housed in the second column of the second row */
 #contribute{
-    background-color: #ff8a8a47;
+    background-color: #35151547;
     grid-column-start: 2;
     grid-column-end: span 2;
     grid-row-start: 2;
@@ -356,229 +361,234 @@ They have been set as the second element that shows up in these two aside tags *
 /* ------------------------------------------------------------------------------------------ */
 /* MEDIA QUERIES */
 
+/* For 1920p screen */
 @media only screen and (min-width: 1920px) {
-    /* setting the article with id "guidelines" in a position where it is housed in the first column of the second row */
+    /* changing the margins of the #contributes and #guidelines articles to match the edges of the #about article present above */
     #guidelines{
         margin: 2rem 2.5rem 1rem 8rem;
     }
-
-    /* setting the article with id "contribute" in a position where it is housed in the second column of the second row */
     #contribute{
         margin: 2rem 9.5rem 1rem 4rem
     }
+    /* changing the margin of the last element in the list of the second section of the #about article */
+    section:nth-child(2) > ul > li:last-child{
+        margin-left: 17rem;
+    }
+}
+/* For 1440p screen */
+@media only screen and (min-width: 2560px) {
+    /* changing the margins of the #contributes and #guidelines articles to match the edges of the #about article present above */
+    #guidelines{
+        margin: 2rem 2.5rem 1rem 12rem;
+    }
+    #contribute{
+        margin: 2rem 13.5rem 1rem 4rem
+    }
+    /* changing the margin of the last element in the list of the second section of the #about article */
+    section:nth-child(2) > ul > li:last-child{
+        margin-left: 34.6rem;
+    }
+}
+/* For 3840 screen */
+@media only screen and (min-width: 2560px) {
+    /* changing the margins of the #contributes and #guidelines articles to match the edges of the #about article present above */
+    #guidelines{
+        margin: 2rem 2.5rem 1rem 20rem;
+    }
+    #contribute{
+        margin: 2rem 21.5rem 1rem 4rem
+    }
+    /* changing the margin of the last element in the list of the second section of the #about article */
+    section:nth-child(2) > ul > li:last-child{
+        margin-left: 340rem;
+    }
 }
 
+/* for shrunk view  */
 @media only screen and (max-width: 1470px) {
+    /* changing the font size of the overall webpage */
     body {
       font-size: 13px;
     }
-
+    /* changing the width of the list element border in the second section of the #about article */
     section:nth-child(2) > ul > li{
-        /* creates a nice border around the individual list items */
         width: 10rem;
     }
-    
+    /* changing the width of the ul of the second section of the #about article */
     #about > section:nth-child(2) ul{
-        width: 25rem;
         margin: auto;
+        width: 25rem;
     }
-
+    /* manipulating the last of element of the above ul */
     section:nth-child(2) > ul > li:last-child{
         margin-left: 6rem;
     }
-    
     /* setting the article with id "guidelines" in a position where it is housed in the first column of the second row */
     #guidelines{
         margin: 2rem 3rem 1rem 4rem;
     }
-
     /* setting the article with id "contribute" in a position where it is housed in the second column of the second row */
     #contribute{
         margin: 2rem 4rem 1rem 3rem;
     }
-
+    /* giving the ordered list of the second section of the article with id "contribute" an even padding on both sides */
     #contribute > section:nth-child(2) ol{
         padding: 0 10px;
     }
-
 }
 
+/* for an even smaller view */
   @media only screen and (max-width: 1070px) {
-      
+    /* I changed the flex-direction of the .container of the #about article to column so that it's vertical. */
     #about{
         flex-direction: column;
     }
+    /* changing the width of the two sections in that article with a margined gap to separate them from each other. */
     #about > section:nth-child(1), #about > section:nth-child(2) {
-        width:50%;
         margin:2rem auto;
+        width:50%;
     }
-
+    /* changed the .container from a grid arrangement to a vertical flex layout so that every article flows vertically */
     main > .container{
         display: flex;
         flex-direction: column;
     }
-
+    /* changing the width of the two articles with a margined gap to separate them from each other. */
     #guidelines, #contribute{
-        width:50%;
         margin:2rem auto;
+        width:50%;
     }
-
+    /* changing the width of the li elements of the asides with id "styles" and class "profile" to fit better in the reduced screen size. */
     .profile ul li, #styles ul li{
         width:14rem;
     }
-
+    /* reducing the width of the two asides to fit better. */
     .profile, #styles{
-        width:50%;
         border-radius: 6rem;
+        width:50%;
     }
-
+    /* removing flex-wrap from the two aside's unordered lists and making them flow vertically to fit */
     .profile ul, #styles ul{
         flex-wrap: nowrap;
         flex-direction: column;
-        padding: 0;
         margin: 1rem auto;
+        padding: 0;
     }
-
+    /* changing the size of all the text elements in the footer to fit */
     .page-footer > div ul, .page-footer > div p{
         font-size:11px;
     }
-
 }
 
+/* for an even smaller view */
   @media only screen and (max-width: 888px) {
-
+    /* changing the size of the nav to fit the smaller size */
     nav{
         font-size: 13px;
     }
-
+    /* making the unordered list in the #about article a vertically flowing flex item. */
     #about > section:nth-child(2) ul{
         flex-direction: column;
+        margin: auto;
         padding: 0;
         width: fit-content;
-        margin: auto;
     }
-
+    /* changing the width of the list elements to fit */
     section:nth-child(2) > ul li{
         width:14rem;
     }
-
+    /* giving the last list item in that list a left margin to shift it towards the middle point of the list */
     section:nth-child(2) > ul > li:last-child {
         margin-left: 6px;
     }
-
+    /* making the footer elements with id "files" of the #contribute article displayed vertically to fit */
     #files > .container{
         display:flex;
         flex-direction: column;
     }
-    
+    /* giving each element in that footer an appropriate width */
     #files a{
         margin: .3rem auto;
         width: 14rem;
     }
-
-    .page-footer > div ul, .page-footer > div p{
-        font-size:11px;
-    }
-
+    /* changing the size of the elements in the unordered list of the actual footer of the html(with class "page-footer" not the footer of the #contribute article)
+    ,changing the size of the elements of the list present within it. */
     .page-footer > div > ul li{
         margin: 0px 16px;
         font-size:xx-small;
     }
-
-}
-
-  @media only screen and (max-width: 580px) {
-    
-    nav{
-        font-size: 10px;
-    }
-
-    body{
-        font-size: 10px;
-    }
-
-    .page-footer > div ul, .page-footer > div p{
-        font-size:8px;
-    }
-
-    .page-footer > div > ul li{
-        margin: 0px 16px;
-    }
 }
 
 @media only screen and (max-width: 580px) {
-    
-    nav, .page-footer > div ul,.page-footer > div p{
+    /* changing the size of the nav, the actual html footer's paragraphs, */
+    nav, .page-footer > div p{
         font-size: 8px;
     }
-
+    /* reducing the actual footer's list element sizes */
     .page-footer > div > ul li{
         margin: 0px 12px;
         font-size: 7px;
-
     }
-
+    /* changing the sizes of various elements in the header to fit */
     header > .container > h2, header > .container > p{
         font-size:14px;
     }
-
+    /* reducing the main heading's size (in the header) */
     header > .container > h1{
         font-size: 50px;
+        text-shadow: 1px 4px black;
     }
-
+    /* changing the width of each list element to fit the reduced screen-size */
     .profile ul li, #styles ul li, #files a, section:nth-child(2) > ul li{
         width:10rem;
     }
-
+    /* giving an even left-right padding to the numbered ordered list of the second section of the #contribute article */
     #contribute > section:nth-child(2) ol{
         padding: 0 10px;
     }
 }
 
 @media only screen and (max-width: 360px) {
-    
-    nav, .page-footer > div ul,.page-footer > div p{
+    /* changing the size of the nav, the actual html footer's paragraphs, */
+    nav,.page-footer > div p{
         font-size: 6px;
     }
-
+    /* reducing the actual footer's list element sizes */
     .page-footer > div > ul li{
         margin: 0px 16px;
         font-size: 5px;
     }
-
+    /* changing the sizes of various elements in the header to fit */
     header > .container > h2, header > .container > p{
         font-size:10px;
     }
-
+    /* reducing the main heading's size (in the header) */
     header > .container > h1{
         font-size: 35px;
+        text-shadow: 3px 2px black;
     }
-
+    /* changing the width of each list element to fit the reduced screen-size */
     .profile ul li, #styles ul li, #files a, section:nth-child(2) > ul li{
         width:7rem;
     }
-
 }
 
 @media only screen and (max-width: 270px) {
-    
-    nav, .page-footer > div ul,.page-footer > div p{
+    /* changing the size of the nav, the actual html footer's paragraphs, */
+    nav,.page-footer > div p{
         font-size: 6px;
     }
-
+    /* changing the sizes of various elements in the header to fit */
     header > .container > h2, header > .container > p{
         font-size:8px;
     }
-
+    /* reducing the main heading's size (in the header) */
     header > .container > h1{
         font-size: 30px;
         text-shadow: 3px 2px black;
     }
-
+    /* changing the width of each list element to fit the reduced screen-size */
     .profile ul li, #styles ul li, #files a, section:nth-child(2) > ul li{
         width:5rem;
     }
-
 }
-
-
